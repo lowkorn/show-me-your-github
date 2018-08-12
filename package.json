@@ -1,0 +1,34 @@
+{
+  "name": "show-me-your-github",
+  "version": "0.1.0",
+  "description": "show programming language based on the repos of github's account",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js | gulp sass",
+    "test": "npm run test:screenshot",
+    "lint": "eslint lib/*.js index.js",
+    "lint:fix": "eslint --fix lib/*.js index.js",
+    "test:screenshot": "concurrently --success first --kill-others \"export PORT=5001 && npm start\" \"casperjs test tests/screenshot-testing/suite.js --debug=true --engine=slimerjs --verbose --log-level=debug --xunit=build/screenshot-testing/results.xml\""
+  },
+  "dependencies": {
+    "axios": "^0.16.2",
+    "body-parser": "^1.15.1",
+    "dotenv": "~4.0.0",
+    "express": "4.16.0",
+    "express-handlebars": "3.0.0",
+    "express-sslify": "1.2.0",
+    "fs": "0.0.1-security",
+    "gulp": "^4.0.0",
+    "gulp-sass": "^3.1.0",
+    "lodash": "^4.17.11",
+    "method-override": "^2.3.5",
+    "nodemon": "^1.18.4"
+  },
+  "devDependencies": {
+    "casperjs": "^1.1.4",
+    "concurrently": "^3.5.0",
+    "eslint": "~4.8.0",
+    "phantomcss": "^1.1.5",
+    "phantomjs-prebuilt": "^2.1.16"
+  }
+}
