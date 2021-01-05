@@ -11,7 +11,7 @@
     "test:screenshot": "concurrently --success first --kill-others \"export PORT=5001 && npm start\" \"casperjs test tests/screenshot-testing/suite.js --debug=true --engine=slimerjs --verbose --log-level=debug --xunit=build/screenshot-testing/results.xml\""
   },
   "dependencies": {
-    "axios": "^0.16.2",
+    "axios": "^0.21.1",
     "body-parser": "^1.15.1",
     "dotenv": "~4.0.0",
     "express": "4.16.0",
